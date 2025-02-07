@@ -1,0 +1,11 @@
+q
+add bayu/Music/
+browser-up
+load Music/
+help 
+load 
+cd Music/
+pwd
+set :set filebrowser_start_directory=~/Music
+:set filebrowser_start_directory=~/Music
+set filebrowser_start_directory=/home/bayu/Music
