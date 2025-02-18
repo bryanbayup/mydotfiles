@@ -1,0 +1,22 @@
+# Abaikan seluruh isi folder .config
+.config/*
+
+# Kecualikan (include) subfolder yang diinginkan
+!.config/nvim/
+!.config/dunst/
+!.config/fish/
+!.config/gtk-3.0/
+!.config/i3status/
+!.config/kitty/
+!.config/ranger/
+!.config/cmus/
+!.config/mpv/
+!.config/i3/
+!.config/GIMP/
+!.config/dconf/
+!.config/qutebrowser/
+!.config/fastfetch/
+!.config/bat/
+!.config/cmus/
+!.config/htop/
+!.config/mpv/
