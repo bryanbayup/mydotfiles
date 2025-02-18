@@ -1,0 +1,61 @@
+general {
+    output_format = "i3bar"
+    colors         = false
+    markup         = "pango"
+    interval       = 2
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "ethernet enp2s0"
+order += "wireless wlan0"
+order += "volume master"
+order += "battery 0"
+order += "time"
+
+# --- Ethernet ---
+ethernet enp2s0 {
+    format_up   = "<span font='Tinos Nerd Font' background='#00f900'>  󰈀   </span><span background='#bfbaac'> LAN </span>"
+    format_down = ""
+}
+
+# --- WiFi ---
+wireless wlan0 {
+    format_up   = "<span font='Tinos Nerd Font' background='#00f900'>     </span><span background='#bfbaac'> %essid </span>"
+    format_down = ""
+}
+
+# --- CPU Usage ---
+cpu_usage {
+    format = "<span font='Tinos Nerd Font' background='#ff2224'>     </span><span background='#bfbaac'> %usage </span>"
+}
+
+# --- Memory ---
+memory {
+    format = "<span font='Tinos Nerd Font' background='#ff2224'>     </span><span background='#bfbaac'> %used </span>"
+}
+
+# --- Battery ---
+battery 0 {
+    last_full_capacity = true
+    format          = "<span background='#00f900'>  %status  </span><span background='#bfbaac'>  %percentage  </span>"
+    format_down     = "No Battery"
+    status_chr      = "󰂄"
+    status_bat      = "󰁿"
+    status_unk      = "󰂎"
+    status_full     = "󰁹"
+    path            = "/sys/class/power_supply/BAT0/uevent"
+    low_threshold   = 10
+    integer_battery_capacity = true
+}
+
+# --- Volume ---
+volume master {
+    format = "<span font='Tinos Nerd Font' background='#4747ff'>  󰕾   </span><span background='#bfbaac'> %volume </span>"
+    format_muted  = "<span font='Tinos Nerd Font' background='#ff2224'>  󰖁   </span><span background='#bfbaac'> %volume </span>"
+}
+
+# --- Time ---
+time {
+    format = "<span background='#2587cc'>    </span><span background='#bfbaac'>  %b %d | %H:%M  </span>"
+}

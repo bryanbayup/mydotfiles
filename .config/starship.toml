@@ -1,0 +1,116 @@
+########################################
+# Global Prompt Settings
+########################################
+
+palette = "everblush"
+
+format = """
+[](#67b0e8)\
+$username\
+[](bg:#232a2d fg:#67b0e8)\
+$hostname\
+[](bg:#141b1e fg:#232a2d)\
+$directory\
+[](bg:#313244 fg:#141b1e)\
+$git_branch\
+$git_status\
+[](fg:#313244 bg:none)\
+$python\
+$nodejs\
+$rust\
+$golang\
+$package\
+$status
+
+[](bold #8ccf7e)\
+$character"""
+
+add_newline = true
+
+########################################
+# Palette Everblush
+########################################
+
+[palettes.everblush]
+background = "#141b1e"
+lighter_background = "#232a2d"
+red = "#e57474"
+green = "#8ccf7e"
+yellow = "#e5c76b"
+blue = "#67b0e8"
+magenta = "#c47fd5"
+cyan = "#6cbfbf"
+light_gray = "#b3b9b8"
+foreground = "#dadada"
+
+########################################
+# Prompt Components
+########################################
+
+[username]
+show_always = true
+style_user = "bold #141b1e bg:#67b0e8"
+style_root = "bold #e57474 bg:#67b0e8"
+format = "[  $user ]($style)"
+
+[hostname]
+ssh_only = false
+style = "bold #dadada bg:#232a2d"
+format = "[   $hostname ]($style)"
+
+[directory]
+truncation_length = 2
+truncate_to_repo = false
+style = "bold #dadada bg:#141b1e"
+format = "[   $path ]($style)"
+
+[git_branch]
+symbol = "󰘬 "
+style = "bold #e5c76b bg:#313244"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "bold #e5c76b bg:#313244"
+format = '([  $all_status]($style))'
+staged = "[ ](green)"
+modified = "[ ](yellow)"
+deleted = "[ ](red)"
+
+[python]
+symbol = " "
+format = '[ $symbol$version ](bold #c47fd5 bg:#313244)'
+detect_extensions = ["py"]
+detect_files = ["requirements.txt", "pyproject.toml", "Pipfile", "tox.ini", "setup.py", "setup.cfg"]
+detect_folders = [".venv", "venv"]
+
+[nodejs]
+symbol = " "
+style = "bold #8ccf7e bg:#313244"
+format = '[ $symbol($version) ]($style)'
+
+[rust]
+symbol = " "
+style = "bold #e57474 bg:#313244"
+format = '[ $symbol($version) ]($style)'
+
+[golang]
+symbol = " "
+style = "bold #6cbfbf bg:#313244"
+format = '[ $symbol($version) ]($style)'
+
+[package]
+symbol = "📦 "
+style = "bold #e5c76b bg:#313244"
+format = '[ $symbol$version ]($style)'
+
+[status]
+disabled = false
+symbol = " "
+success_symbol = "[✔](bold #8ccf7e)"
+format = '[ $symbol $status ]($style)'
+style = "bold #e57474"
+
+
+[character]
+success_symbol = "[](bold #8ccf7e)"
+error_symbol = "[✗](bold #e57474)"
